@@ -708,9 +708,9 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-label">Architectural Vision Document</div>
+      <div class="hero-label">Architectural Vision Document — v2.0</div>
       <h1 class="hero-title">Rusch-Lockhart Manor</h1>
-      <p class="hero-subtitle">A single-story contemporary estate designed for family living, with dedicated spaces for work, wellness, and entertaining</p>
+      <p class="hero-subtitle">A single-story contemporary estate with butterfly layout — private wings for parents and kids, connected by open living spaces with seamless indoor-outdoor flow</p>
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-value">4,200</div>
@@ -721,12 +721,12 @@
           <div class="stat-label">Guest House Sq Ft</div>
         </div>
         <div class="stat">
-          <div class="stat-value">2-3</div>
-          <div class="stat-label">Acres Recommended</div>
+          <div class="stat-value">600</div>
+          <div class="stat-label">Gym Building Sq Ft</div>
         </div>
         <div class="stat">
-          <div class="stat-value">4</div>
-          <div class="stat-label">Bedrooms</div>
+          <div class="stat-value">2-3</div>
+          <div class="stat-label">Acres Recommended</div>
         </div>
       </div>
     </div>
@@ -754,7 +754,7 @@
     <div class="section-header">
       <div class="section-label">01 / Site Plan</div>
       <h2 class="section-title">The Compound Layout</h2>
-      <p class="section-desc">Think of your property like a private resort: the main house anchors the estate, with purpose-built outbuildings creating distinct zones for living, working, and wellness.</p>
+      <p class="section-desc">Main house anchors the front, with guest house and gym positioned behind for privacy. Detached garage connects via covered breezeway. L-shaped patio wraps the side for indoor-outdoor living.</p>
     </div>
 
     <div class="site-plan-container">
@@ -764,62 +764,89 @@
           <rect x="50" y="30" width="900" height="565" fill="none" stroke="#2a2a2a" stroke-width="2" stroke-dasharray="10,5"/>
           
           <!-- Lawn/Garden areas -->
-          <rect x="500" y="100" width="400" height="350" rx="8" fill="rgba(74, 222, 128, 0.08)" stroke="rgba(74, 222, 128, 0.2)" stroke-width="1"/>
-          <text x="700" y="280" class="building-label" fill="rgba(74, 222, 128, 0.5)" font-size="14">LAWN & GARDEN</text>
+          <rect x="100" y="350" width="750" height="220" rx="8" fill="rgba(74, 222, 128, 0.08)" stroke="rgba(74, 222, 128, 0.2)" stroke-width="1"/>
+          <text x="475" y="470" class="building-label" fill="rgba(74, 222, 128, 0.5)" font-size="14">LAWN & GARDEN</text>
           
           <!-- Fire Pit Area -->
-          <circle cx="700" cy="380" r="40" fill="rgba(251, 146, 60, 0.15)" stroke="rgba(251, 146, 60, 0.4)" stroke-width="1"/>
-          <circle cx="700" cy="380" r="15" fill="rgba(251, 146, 60, 0.3)" stroke="rgba(251, 146, 60, 0.6)" stroke-width="2"/>
-          <text x="700" y="440" class="building-label" fill="rgba(251, 146, 60, 0.7)" font-size="9">FIRE PIT</text>
+          <circle cx="550" cy="420" r="35" fill="rgba(251, 146, 60, 0.15)" stroke="rgba(251, 146, 60, 0.4)" stroke-width="1"/>
+          <circle cx="550" cy="420" r="12" fill="rgba(251, 146, 60, 0.3)" stroke="rgba(251, 146, 60, 0.6)" stroke-width="2"/>
+          <text x="550" y="470" class="building-label" fill="rgba(251, 146, 60, 0.7)" font-size="9">FIRE PIT</text>
 
-          <!-- Driveway -->
-          <path d="M 50 350 Q 150 350 200 300 L 200 200 L 350 200 L 350 280" fill="none" stroke="#3a3a3a" stroke-width="30" stroke-linecap="round"/>
-          <path d="M 50 350 Q 150 350 200 300 L 200 200 L 350 200 L 350 280" fill="none" stroke="#2a2a2a" stroke-width="26" stroke-linecap="round"/>
+          <!-- Main Driveway -->
+          <path d="M 50 200 L 200 200 L 200 280" fill="none" stroke="#3a3a3a" stroke-width="35" stroke-linecap="round"/>
+          <path d="M 50 200 L 200 200 L 200 280" fill="none" stroke="#2a2a2a" stroke-width="30" stroke-linecap="round"/>
+          
+          <!-- Guest House Driveway (separate entrance) -->
+          <path d="M 50 450 L 150 450 L 150 400" fill="none" stroke="#3a3a3a" stroke-width="20" stroke-linecap="round"/>
+          <path d="M 50 450 L 150 450 L 150 400" fill="none" stroke="#2a2a2a" stroke-width="16" stroke-linecap="round"/>
           
           <!-- Gate/Entry -->
-          <rect x="30" y="335" width="40" height="30" rx="4" fill="var(--accent)" opacity="0.8"/>
-          <text x="50" y="385" class="building-label" fill="var(--accent)" font-size="9">GATED ENTRY</text>
+          <rect x="30" y="185" width="40" height="30" rx="4" fill="var(--accent)" opacity="0.8"/>
+          <text x="50" y="235" class="building-label" fill="var(--accent)" font-size="9">GATED ENTRY</text>
 
-          <!-- Main House -->
-          <g class="building" data-building="main">
-            <rect x="200" y="280" width="280" height="180" rx="4" fill="#c9a962" opacity="0.25" stroke="#c9a962" stroke-width="2"/>
-            <rect x="210" y="290" width="260" height="160" rx="2" fill="#1a1a1a" stroke="#c9a962" stroke-width="1"/>
-            <!-- Indoor-outdoor connection -->
-            <rect x="470" y="320" width="80" height="100" rx="2" fill="rgba(201, 169, 98, 0.1)" stroke="#c9a962" stroke-width="1" stroke-dasharray="4,2"/>
-            <text x="510" y="375" class="building-label" font-size="8" fill="rgba(201, 169, 98, 0.6)">COVERED</text>
-            <text x="510" y="387" class="building-label" font-size="8" fill="rgba(201, 169, 98, 0.6)">PATIO</text>
-            <text x="340" y="365" class="building-label" font-size="14">MAIN HOUSE</text>
-            <text x="340" y="385" class="building-label" font-size="10" fill="var(--text-secondary)">4,200 sq ft</text>
-          </g>
+          <!-- Secondary Gate for Guest House -->
+          <rect x="30" y="435" width="40" height="30" rx="4" fill="rgba(244, 114, 182, 0.6)"/>
+          <text x="50" y="485" class="building-label" fill="rgba(244, 114, 182, 0.8)" font-size="8">GUEST ENTRY</text>
 
-          <!-- 3+ Car Garage -->
+          <!-- 3-Car Garage (Detached) -->
           <g class="building" data-building="garage">
-            <rect x="200" y="480" width="150" height="100" rx="4" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="2"/>
-            <text x="275" y="535" class="building-label" fill="rgba(147, 197, 253, 0.9)" font-size="12">3-CAR GARAGE</text>
-            <text x="275" y="550" class="building-label" font-size="9" fill="rgba(147, 197, 253, 0.6)">900 sq ft</text>
+            <rect x="130" y="120" width="150" height="100" rx="4" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="2"/>
+            <text x="205" y="170" class="building-label" fill="rgba(147, 197, 253, 0.9)" font-size="11">3-CAR GARAGE</text>
+            <text x="205" y="185" class="building-label" font-size="9" fill="rgba(147, 197, 253, 0.6)">900 sq ft</text>
             <!-- Garage doors -->
-            <rect x="210" y="488" width="35" height="8" rx="1" fill="rgba(147, 197, 253, 0.3)"/>
-            <rect x="255" y="488" width="35" height="8" rx="1" fill="rgba(147, 197, 253, 0.3)"/>
-            <rect x="300" y="488" width="35" height="8" rx="1" fill="rgba(147, 197, 253, 0.3)"/>
+            <rect x="140" y="210" width="35" height="8" rx="1" fill="rgba(147, 197, 253, 0.3)"/>
+            <rect x="182" y="210" width="35" height="8" rx="1" fill="rgba(147, 197, 253, 0.3)"/>
+            <rect x="224" y="210" width="35" height="8" rx="1" fill="rgba(147, 197, 253, 0.3)"/>
+          </g>
+          
+          <!-- Breezeway connecting garage to main house -->
+          <rect x="280" y="160" width="60" height="30" fill="rgba(147, 197, 253, 0.1)" stroke="rgba(147, 197, 253, 0.3)" stroke-width="1" stroke-dasharray="4,2"/>
+          <text x="310" y="180" class="building-label" font-size="7" fill="rgba(147, 197, 253, 0.5)">BREEZEWAY</text>
+
+          <!-- Main House (Butterfly Layout) -->
+          <g class="building" data-building="main">
+            <!-- Main body -->
+            <rect x="340" y="100" width="420" height="180" rx="4" fill="#c9a962" opacity="0.25" stroke="#c9a962" stroke-width="2"/>
+            <rect x="350" y="110" width="400" height="160" rx="2" fill="#1a1a1a" stroke="#c9a962" stroke-width="1"/>
+            
+            <!-- Primary Suite Wing (Right) -->
+            <rect x="680" y="130" width="60" height="120" rx="2" fill="rgba(201, 169, 98, 0.15)" stroke="#c9a962" stroke-width="1"/>
+            <text x="710" y="195" class="building-label" font-size="7" fill="rgba(201, 169, 98, 0.7)">PRIMARY</text>
+            
+            <!-- Kids Wing (Left) -->
+            <rect x="360" y="130" width="60" height="120" rx="2" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="1"/>
+            <text x="390" y="195" class="building-label" font-size="7" fill="rgba(147, 197, 253, 0.7)">KIDS</text>
+
+            <!-- L-Shaped Covered Patio (wraps side) -->
+            <rect x="760" y="100" width="100" height="180" rx="2" fill="rgba(201, 169, 98, 0.1)" stroke="#c9a962" stroke-width="1" stroke-dasharray="4,2"/>
+            <rect x="600" y="280" width="260" height="60" rx="2" fill="rgba(201, 169, 98, 0.1)" stroke="#c9a962" stroke-width="1" stroke-dasharray="4,2"/>
+            <text x="810" y="195" class="building-label" font-size="8" fill="rgba(201, 169, 98, 0.6)">COVERED</text>
+            <text x="810" y="207" class="building-label" font-size="8" fill="rgba(201, 169, 98, 0.6)">PATIO</text>
+            <text x="730" y="315" class="building-label" font-size="8" fill="rgba(201, 169, 98, 0.6)">L-WRAP PATIO</text>
+            
+            <text x="550" y="185" class="building-label" font-size="14">MAIN HOUSE</text>
+            <text x="550" y="205" class="building-label" font-size="10" fill="var(--text-secondary)">4,200 sq ft • Butterfly Layout</text>
           </g>
 
-          <!-- Guest House -->
+          <!-- Guest House (Behind main, secluded) -->
           <g class="building" data-building="guest">
-            <rect x="620" y="480" width="120" height="90" rx="4" fill="rgba(244, 114, 182, 0.15)" stroke="rgba(244, 114, 182, 0.5)" stroke-width="2"/>
-            <text x="680" y="525" class="building-label" fill="rgba(244, 114, 182, 0.9)" font-size="11">GUEST HOUSE</text>
-            <text x="680" y="542" class="building-label" font-size="9" fill="rgba(244, 114, 182, 0.6)">800 sq ft</text>
+            <rect x="250" y="380" width="130" height="100" rx="4" fill="rgba(244, 114, 182, 0.15)" stroke="rgba(244, 114, 182, 0.5)" stroke-width="2"/>
+            <text x="315" y="430" class="building-label" fill="rgba(244, 114, 182, 0.9)" font-size="11">GUEST HOUSE</text>
+            <text x="315" y="447" class="building-label" font-size="9" fill="rgba(244, 114, 182, 0.6)">800 sq ft</text>
+            <text x="315" y="462" class="building-label" font-size="7" fill="rgba(244, 114, 182, 0.5)">Separate entrance</text>
           </g>
 
-          <!-- Office/Gym Building -->
-          <g class="building" data-building="office">
-            <rect x="780" y="480" width="120" height="90" rx="4" fill="rgba(167, 139, 250, 0.15)" stroke="rgba(167, 139, 250, 0.5)" stroke-width="2"/>
-            <text x="840" y="520" class="building-label" fill="rgba(167, 139, 250, 0.9)" font-size="11">OFFICE / GYM</text>
-            <text x="840" y="537" class="building-label" font-size="9" fill="rgba(167, 139, 250, 0.6)">600 sq ft</text>
+          <!-- Gym Building (Behind main, quick access) -->
+          <g class="building" data-building="gym">
+            <rect x="700" y="380" width="120" height="90" rx="4" fill="rgba(167, 139, 250, 0.15)" stroke="rgba(167, 139, 250, 0.5)" stroke-width="2"/>
+            <text x="760" y="420" class="building-label" fill="rgba(167, 139, 250, 0.9)" font-size="11">GYM</text>
+            <text x="760" y="437" class="building-label" font-size="9" fill="rgba(167, 139, 250, 0.6)">600 sq ft</text>
+            <text x="760" y="452" class="building-label" font-size="7" fill="rgba(167, 139, 250, 0.5)">Sauna + Storage</text>
           </g>
 
           <!-- Walking paths -->
-          <path d="M 480 420 Q 550 480 620 520" fill="none" stroke="#3a3a3a" stroke-width="3" stroke-dasharray="6,4"/>
-          <path d="M 740 525 L 780 525" fill="none" stroke="#3a3a3a" stroke-width="3" stroke-dasharray="6,4"/>
+          <path d="M 730 340 L 760 380" fill="none" stroke="#3a3a3a" stroke-width="3" stroke-dasharray="6,4"/>
+          <path d="M 380 280 Q 350 330 315 380" fill="none" stroke="#3a3a3a" stroke-width="3" stroke-dasharray="6,4"/>
 
           <!-- Compass -->
           <g transform="translate(880, 80)">
@@ -841,19 +868,19 @@
       <div class="site-legend">
         <div class="legend-item">
           <div class="legend-color" style="background: rgba(201, 169, 98, 0.4);"></div>
-          <div class="legend-text"><strong>Main House</strong>4,200 sq ft</div>
+          <div class="legend-text"><strong>Main House</strong>4,200 sq ft + L-wrap patio</div>
         </div>
         <div class="legend-item">
           <div class="legend-color" style="background: rgba(147, 197, 253, 0.4);"></div>
-          <div class="legend-text"><strong>3-Car Garage</strong>900 sq ft</div>
+          <div class="legend-text"><strong>3-Car Garage</strong>900 sq ft, breezeway connected</div>
         </div>
         <div class="legend-item">
           <div class="legend-color" style="background: rgba(244, 114, 182, 0.4);"></div>
-          <div class="legend-text"><strong>Guest House</strong>800 sq ft</div>
+          <div class="legend-text"><strong>Guest House</strong>800 sq ft, separate entrance</div>
         </div>
         <div class="legend-item">
           <div class="legend-color" style="background: rgba(167, 139, 250, 0.4);"></div>
-          <div class="legend-text"><strong>Office/Gym</strong>600 sq ft</div>
+          <div class="legend-text"><strong>Dedicated Gym</strong>600 sq ft w/ sauna</div>
         </div>
         <div class="legend-item">
           <div class="legend-color" style="background: rgba(74, 222, 128, 0.3);"></div>
@@ -871,149 +898,169 @@
   <section id="floor-plan">
     <div class="section-header">
       <div class="section-label">02 / Floor Plans</div>
-      <h2 class="section-title">Main House Layout</h2>
-      <p class="section-desc">A thoughtfully zoned single-story design that separates private bedrooms from public living spaces, with seamless indoor-outdoor flow.</p>
+      <h2 class="section-title">Butterfly Layout</h2>
+      <p class="section-desc">Primary suite on one wing, kids' bedrooms on the other, with shared living spaces in the center. Mudroom at garage entry, powder room for guests, and a proper home office.</p>
     </div>
 
     <div class="floor-plan-tabs">
       <button class="floor-tab active" data-floor="main">Main House</button>
       <button class="floor-tab" data-floor="guest">Guest House</button>
-      <button class="floor-tab" data-floor="office">Office/Gym</button>
+      <button class="floor-tab" data-floor="gym">Gym Building</button>
     </div>
 
-    <!-- Main House Floor Plan -->
+    <!-- Main House Floor Plan - BUTTERFLY LAYOUT -->
     <div class="floor-plan-view active" data-floor="main">
       <div class="floor-svg-container">
         <svg viewBox="0 0 1000 625" preserveAspectRatio="xMidYMid meet">
           <!-- Outer walls -->
-          <rect x="80" y="60" width="840" height="505" fill="none" stroke="#3a3a3a" stroke-width="4"/>
+          <rect x="80" y="80" width="840" height="465" fill="none" stroke="#3a3a3a" stroke-width="4"/>
           
-          <!-- PUBLIC ZONE - Left/Center -->
-          <!-- Great Room (Living) -->
+          <!-- === LEFT WING: KIDS ZONE === -->
+          <text x="200" y="65" fill="rgba(147, 197, 253, 0.8)" font-size="11" text-anchor="middle" font-weight="600">KIDS' WING</text>
+          
+          <!-- Bedroom 2 (Kid 1) -->
           <g class="room">
-            <rect x="84" y="64" width="300" height="250" fill="rgba(201, 169, 98, 0.15)" stroke="#c9a962" stroke-width="1"/>
-            <text x="234" y="180" class="room-label">GREAT ROOM</text>
-            <text x="234" y="198" class="room-size">24' × 20' (480 sq ft)</text>
+            <rect x="84" y="84" width="168" height="140" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="1"/>
+            <text x="168" y="150" class="room-label">BEDROOM 2</text>
+            <text x="168" y="168" class="room-size">14' × 12' (168 sq ft)</text>
+          </g>
+
+          <!-- Bedroom 3 (Kid 2) -->
+          <g class="room">
+            <rect x="84" y="224" width="168" height="140" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="1"/>
+            <text x="168" y="290" class="room-label">BEDROOM 3</text>
+            <text x="168" y="308" class="room-size">14' × 12' (168 sq ft)</text>
+          </g>
+
+          <!-- Jack & Jill Bath (between kids rooms) -->
+          <g class="room">
+            <rect x="84" y="364" width="168" height="80" fill="rgba(96, 165, 250, 0.2)" stroke="rgba(96, 165, 250, 0.5)" stroke-width="1"/>
+            <text x="168" y="405" class="room-label" font-size="9">JACK & JILL BATH</text>
+            <text x="168" y="420" class="room-size">14' × 8' (112 sq ft)</text>
+          </g>
+
+          <!-- Bedroom 4 / Flex -->
+          <g class="room">
+            <rect x="84" y="444" width="168" height="97" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="1"/>
+            <text x="168" y="490" class="room-label">BEDROOM 4</text>
+            <text x="168" y="508" class="room-size">14' × 12' (168 sq ft)</text>
+          </g>
+
+          <!-- === CENTER: PUBLIC ZONE === -->
+          <text x="500" y="65" fill="var(--accent)" font-size="11" text-anchor="middle" font-weight="600">PUBLIC ZONE</text>
+          
+          <!-- Great Room -->
+          <g class="room">
+            <rect x="252" y="84" width="280" height="200" fill="rgba(201, 169, 98, 0.15)" stroke="#c9a962" stroke-width="1"/>
+            <text x="392" y="175" class="room-label" font-size="11">GREAT ROOM</text>
+            <text x="392" y="195" class="room-size">24' × 20' (480 sq ft)</text>
           </g>
 
           <!-- Chef's Kitchen -->
           <g class="room">
-            <rect x="384" y="64" width="250" height="180" fill="rgba(251, 146, 60, 0.15)" stroke="rgba(251, 146, 60, 0.6)" stroke-width="1"/>
-            <text x="509" y="145" class="room-label">CHEF'S KITCHEN</text>
-            <text x="509" y="163" class="room-size">20' × 15' (300 sq ft)</text>
+            <rect x="532" y="84" width="200" height="160" fill="rgba(251, 146, 60, 0.15)" stroke="rgba(251, 146, 60, 0.6)" stroke-width="1"/>
+            <text x="632" y="155" class="room-label">CHEF'S KITCHEN</text>
+            <text x="632" y="173" class="room-size">18' × 15' (270 sq ft)</text>
             <!-- Island -->
-            <rect x="434" y="120" width="100" height="40" fill="rgba(251, 146, 60, 0.3)" stroke="rgba(251, 146, 60, 0.5)" stroke-width="1"/>
-            <text x="484" y="145" class="room-size" font-size="7">ISLAND</text>
+            <rect x="572" y="130" width="90" height="35" fill="rgba(251, 146, 60, 0.3)" stroke="rgba(251, 146, 60, 0.5)" stroke-width="1"/>
+            <text x="617" y="152" class="room-size" font-size="7">ISLAND</text>
           </g>
 
           <!-- Dining -->
           <g class="room">
-            <rect x="384" y="244" width="180" height="150" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="1"/>
-            <text x="474" y="320" class="room-label">DINING</text>
-            <text x="474" y="338" class="room-size">15' × 12' (180 sq ft)</text>
+            <rect x="252" y="284" width="160" height="130" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="1"/>
+            <text x="332" y="350" class="room-label">DINING</text>
+            <text x="332" y="368" class="room-size">14' × 12' (168 sq ft)</text>
           </g>
 
           <!-- Home Theater -->
           <g class="room">
-            <rect x="84" y="314" width="200" height="160" fill="rgba(167, 139, 250, 0.15)" stroke="rgba(167, 139, 250, 0.5)" stroke-width="1"/>
-            <text x="184" y="390" class="room-label">HOME THEATER</text>
-            <text x="184" y="408" class="room-size">16' × 13' (208 sq ft)</text>
+            <rect x="252" y="414" width="160" height="127" fill="rgba(167, 139, 250, 0.15)" stroke="rgba(167, 139, 250, 0.5)" stroke-width="1"/>
+            <text x="332" y="475" class="room-label">HOME THEATER</text>
+            <text x="332" y="493" class="room-size">14' × 13' (182 sq ft)</text>
           </g>
 
-          <!-- Office/Library -->
+          <!-- Office/Library (expanded) -->
           <g class="room">
-            <rect x="284" y="314" width="100" height="80" fill="rgba(74, 222, 128, 0.15)" stroke="rgba(74, 222, 128, 0.5)" stroke-width="1"/>
-            <text x="334" y="355" class="room-label">OFFICE</text>
-            <text x="334" y="370" class="room-size">10' × 10'</text>
+            <rect x="412" y="284" width="140" height="100" fill="rgba(74, 222, 128, 0.15)" stroke="rgba(74, 222, 128, 0.5)" stroke-width="1"/>
+            <text x="482" y="330" class="room-label">HOME OFFICE</text>
+            <text x="482" y="348" class="room-size">14' × 12' (168 sq ft)</text>
           </g>
 
-          <!-- Fitness Room -->
+          <!-- Powder Room (Guest Bath in public zone) -->
           <g class="room">
-            <rect x="84" y="474" width="180" height="87" fill="rgba(244, 114, 182, 0.15)" stroke="rgba(244, 114, 182, 0.5)" stroke-width="1"/>
-            <text x="174" y="518" class="room-label">FITNESS</text>
-            <text x="174" y="536" class="room-size">15' × 12' (180 sq ft)</text>
+            <rect x="412" y="384" width="70" height="60" fill="rgba(96, 165, 250, 0.2)" stroke="rgba(96, 165, 250, 0.5)" stroke-width="1"/>
+            <text x="447" y="418" class="room-size">POWDER</text>
+            <text x="447" y="430" class="room-size">ROOM</text>
           </g>
 
-          <!-- Mudroom/Entry -->
+          <!-- Mudroom (at garage/breezeway entry) -->
           <g class="room">
-            <rect x="264" y="474" width="120" height="87" fill="rgba(156, 163, 175, 0.15)" stroke="rgba(156, 163, 175, 0.5)" stroke-width="1"/>
-            <text x="324" y="518" class="room-label">MUDROOM</text>
-            <text x="324" y="536" class="room-size">10' × 12'</text>
+            <rect x="532" y="244" width="100" height="80" fill="rgba(156, 163, 175, 0.15)" stroke="rgba(156, 163, 175, 0.5)" stroke-width="1"/>
+            <text x="582" y="280" class="room-label">MUDROOM</text>
+            <text x="582" y="295" class="room-size">10' × 10' (100 sq ft)</text>
+            <!-- Arrow indicating garage entry -->
+            <text x="582" y="315" class="room-size" fill="rgba(147, 197, 253, 0.6)">← FROM GARAGE</text>
           </g>
 
-          <!-- PRIVATE ZONE - Right Side -->
-          <!-- Primary Suite -->
+          <!-- Laundry -->
           <g class="room">
-            <rect x="634" y="64" width="282" height="200" fill="rgba(201, 169, 98, 0.2)" stroke="#c9a962" stroke-width="2"/>
-            <text x="775" y="140" class="room-label" font-size="12">PRIMARY SUITE</text>
-            <text x="775" y="160" class="room-size">18' × 16' (288 sq ft)</text>
-            <!-- Primary Bath -->
-            <rect x="800" y="180" width="112" height="80" fill="rgba(201, 169, 98, 0.1)" stroke="#c9a962" stroke-width="1"/>
-            <text x="856" y="225" class="room-size">PRIMARY BATH</text>
-            <!-- Walk-in Closet -->
-            <rect x="638" y="180" width="80" height="80" fill="rgba(201, 169, 98, 0.1)" stroke="#c9a962" stroke-width="1"/>
-            <text x="678" y="225" class="room-size">CLOSET</text>
+            <rect x="412" y="444" width="100" height="97" fill="rgba(156, 163, 175, 0.15)" stroke="rgba(156, 163, 175, 0.5)" stroke-width="1"/>
+            <text x="462" y="490" class="room-label">LAUNDRY</text>
+            <text x="462" y="508" class="room-size">10' × 10' (100 sq ft)</text>
           </g>
 
-          <!-- Bedroom 2 -->
+          <!-- === RIGHT WING: PRIMARY SUITE === -->
+          <text x="800" y="65" fill="rgba(201, 169, 98, 0.8)" font-size="11" text-anchor="middle" font-weight="600">PRIMARY WING</text>
+          
+          <!-- Primary Bedroom -->
           <g class="room">
-            <rect x="634" y="264" width="140" height="130" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="1"/>
-            <text x="704" y="325" class="room-label">BEDROOM 2</text>
-            <text x="704" y="343" class="room-size">12' × 11' (132 sq ft)</text>
+            <rect x="732" y="84" width="184" height="180" fill="rgba(201, 169, 98, 0.2)" stroke="#c9a962" stroke-width="2"/>
+            <text x="824" y="165" class="room-label" font-size="11">PRIMARY BEDROOM</text>
+            <text x="824" y="185" class="room-size">18' × 16' (288 sq ft)</text>
           </g>
 
-          <!-- Bedroom 3 -->
+          <!-- Primary Bath -->
           <g class="room">
-            <rect x="774" y="264" width="142" height="130" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="1"/>
-            <text x="845" y="325" class="room-label">BEDROOM 3</text>
-            <text x="845" y="343" class="room-size">12' × 11' (132 sq ft)</text>
+            <rect x="732" y="264" width="120" height="100" fill="rgba(201, 169, 98, 0.1)" stroke="#c9a962" stroke-width="1"/>
+            <text x="792" y="310" class="room-label" font-size="9">PRIMARY BATH</text>
+            <text x="792" y="328" class="room-size">12' × 10' (120 sq ft)</text>
           </g>
 
-          <!-- Bedroom 4 / Kids -->
+          <!-- Walk-in Closet -->
           <g class="room">
-            <rect x="634" y="394" width="140" height="130" fill="rgba(147, 197, 253, 0.15)" stroke="rgba(147, 197, 253, 0.5)" stroke-width="1"/>
-            <text x="704" y="455" class="room-label">BEDROOM 4</text>
-            <text x="704" y="473" class="room-size">12' × 11' (132 sq ft)</text>
+            <rect x="852" y="264" width="64" height="100" fill="rgba(201, 169, 98, 0.1)" stroke="#c9a962" stroke-width="1"/>
+            <text x="884" y="310" class="room-label" font-size="8">WALK-IN</text>
+            <text x="884" y="325" class="room-size">CLOSET</text>
           </g>
 
-          <!-- Jack & Jill Bath -->
+          <!-- Guest Bathroom (full, serves bedroom 4 / guests) -->
           <g class="room">
-            <rect x="774" y="394" width="142" height="65" fill="rgba(96, 165, 250, 0.2)" stroke="rgba(96, 165, 250, 0.5)" stroke-width="1"/>
-            <text x="845" y="432" class="room-size">JACK & JILL BATH</text>
+            <rect x="512" y="444" width="100" height="97" fill="rgba(96, 165, 250, 0.2)" stroke="rgba(96, 165, 250, 0.5)" stroke-width="1"/>
+            <text x="562" y="490" class="room-label" font-size="9">GUEST BATH</text>
+            <text x="562" y="508" class="room-size">10' × 10' (100 sq ft)</text>
           </g>
 
-          <!-- Hallway Bathroom -->
+          <!-- Hallway / Circulation -->
+          <rect x="632" y="244" width="100" height="297" fill="rgba(255,255,255,0.02)" stroke="none"/>
+          <text x="682" y="400" class="room-size" fill="rgba(255,255,255,0.25)">HALL</text>
+
+          <!-- Sitting area in primary wing -->
           <g class="room">
-            <rect x="774" y="459" width="142" height="65" fill="rgba(96, 165, 250, 0.2)" stroke="rgba(96, 165, 250, 0.5)" stroke-width="1"/>
-            <text x="845" y="497" class="room-size">POWDER ROOM</text>
+            <rect x="732" y="364" width="184" height="80" fill="rgba(201, 169, 98, 0.08)" stroke="rgba(201, 169, 98, 0.3)" stroke-width="1"/>
+            <text x="824" y="408" class="room-label" font-size="9" fill="rgba(201, 169, 98, 0.7)">SITTING AREA</text>
           </g>
 
-          <!-- Utility/Laundry -->
-          <g class="room">
-            <rect x="564" y="394" width="70" height="130" fill="rgba(156, 163, 175, 0.15)" stroke="rgba(156, 163, 175, 0.5)" stroke-width="1"/>
-            <text x="599" y="455" class="room-label" font-size="8">LAUNDRY</text>
-            <text x="599" y="470" class="room-size">8' × 11'</text>
-          </g>
-
-          <!-- Covered Patio Indication -->
-          <rect x="564" y="64" width="70" height="180" fill="none" stroke="#c9a962" stroke-width="1" stroke-dasharray="5,3"/>
-          <text x="599" y="150" class="room-size" fill="rgba(201, 169, 98, 0.6)">TO</text>
-          <text x="599" y="165" class="room-size" fill="rgba(201, 169, 98, 0.6)">PATIO</text>
-
-          <!-- Hallway indication -->
-          <rect x="564" y="244" width="70" height="150" fill="rgba(255,255,255,0.03)" stroke="none"/>
-          <text x="599" y="320" class="room-size" fill="rgba(255,255,255,0.3)">HALL</text>
-
-          <!-- Zone Labels -->
-          <text x="234" y="45" fill="var(--accent)" font-size="11" text-anchor="middle" font-weight="600">PUBLIC ZONE</text>
-          <text x="775" y="45" fill="rgba(147, 197, 253, 0.8)" font-size="11" text-anchor="middle" font-weight="600">PRIVATE ZONE</text>
+          <!-- L-Shaped Patio indication -->
+          <rect x="732" y="444" width="184" height="97" fill="none" stroke="#c9a962" stroke-width="1" stroke-dasharray="5,3"/>
+          <text x="824" y="495" class="room-size" fill="rgba(201, 169, 98, 0.6)">TO L-WRAP PATIO →</text>
 
           <!-- Dimension indicators -->
-          <line x1="80" y1="585" x2="920" y2="585" stroke="var(--text-secondary)" stroke-width="1"/>
-          <text x="500" y="600" text-anchor="middle" fill="var(--text-secondary)" font-size="10">~85' overall width</text>
+          <line x1="80" y1="565" x2="920" y2="565" stroke="var(--text-secondary)" stroke-width="1"/>
+          <text x="500" y="580" text-anchor="middle" fill="var(--text-secondary)" font-size="10">~90' overall width</text>
           
-          <line x1="940" y1="60" x2="940" y2="565" stroke="var(--text-secondary)" stroke-width="1"/>
-          <text x="960" y="315" fill="var(--text-secondary)" font-size="10" transform="rotate(90, 960, 315)">~50' depth</text>
+          <line x1="940" y1="80" x2="940" y2="545" stroke="var(--text-secondary)" stroke-width="1"/>
+          <text x="960" y="315" fill="var(--text-secondary)" font-size="10" transform="rotate(90, 960, 315)">~52' depth</text>
         </svg>
       </div>
 
@@ -1026,15 +1073,19 @@
           </div>
           <div class="room-card">
             <div class="room-card-name">Chef's Kitchen</div>
-            <div class="room-card-size">20' × 15' — 300 sq ft (10' island)</div>
+            <div class="room-card-size">18' × 15' — 270 sq ft (9' island)</div>
           </div>
           <div class="room-card">
             <div class="room-card-name">Dining Room</div>
-            <div class="room-card-size">15' × 12' — 180 sq ft</div>
+            <div class="room-card-size">14' × 12' — 168 sq ft</div>
           </div>
           <div class="room-card">
             <div class="room-card-name">Home Theater</div>
-            <div class="room-card-size">16' × 13' — 208 sq ft</div>
+            <div class="room-card-size">14' × 13' — 182 sq ft</div>
+          </div>
+          <div class="room-card">
+            <div class="room-card-name">Home Office</div>
+            <div class="room-card-size">14' × 12' — 168 sq ft</div>
           </div>
           <div class="room-card">
             <div class="room-card-name">Primary Suite</div>
@@ -1042,14 +1093,18 @@
           </div>
           <div class="room-card">
             <div class="room-card-name">Bedrooms 2-4</div>
-            <div class="room-card-size">12' × 11' each — 132 sq ft × 3</div>
+            <div class="room-card-size">14' × 12' each — 168 sq ft × 3</div>
           </div>
           <div class="room-card">
-            <div class="room-card-name">Fitness Room</div>
-            <div class="room-card-size">15' × 12' — 180 sq ft</div>
+            <div class="room-card-name">Bathrooms</div>
+            <div class="room-card-size">Primary + Jack&Jill + Guest + Powder</div>
           </div>
           <div class="room-card">
-            <div class="room-card-name">Office/Library</div>
+            <div class="room-card-name">Mudroom</div>
+            <div class="room-card-size">10' × 10' — 100 sq ft (at garage entry)</div>
+          </div>
+          <div class="room-card">
+            <div class="room-card-name">Laundry</div>
             <div class="room-card-size">10' × 10' — 100 sq ft</div>
           </div>
         </div>
@@ -1062,14 +1117,15 @@
         <svg viewBox="0 0 1000 625" preserveAspectRatio="xMidYMid meet">
           <rect x="250" y="150" width="500" height="325" fill="none" stroke="#3a3a3a" stroke-width="4"/>
           
-          <!-- Living/Kitchen -->
+          <!-- Living/Kitchen with Kitchenette -->
           <g class="room">
             <rect x="254" y="154" width="280" height="200" fill="rgba(244, 114, 182, 0.15)" stroke="rgba(244, 114, 182, 0.5)" stroke-width="1"/>
-            <text x="394" y="240" class="room-label">LIVING / KITCHEN</text>
+            <text x="394" y="240" class="room-label">LIVING AREA</text>
             <text x="394" y="260" class="room-size">20' × 14' (280 sq ft)</text>
             <!-- Kitchenette -->
-            <rect x="454" y="164" width="70" height="60" fill="rgba(244, 114, 182, 0.2)" stroke="rgba(244, 114, 182, 0.4)" stroke-width="1"/>
-            <text x="489" y="200" class="room-size">KITCHEN</text>
+            <rect x="454" y="164" width="70" height="50" fill="rgba(244, 114, 182, 0.2)" stroke="rgba(244, 114, 182, 0.4)" stroke-width="1"/>
+            <text x="489" y="185" class="room-size" font-size="7">KITCHENETTE</text>
+            <text x="489" y="198" class="room-size" font-size="6">Mini fridge, micro, sink</text>
           </g>
 
           <!-- Bedroom -->
@@ -1082,7 +1138,7 @@
           <!-- Bathroom -->
           <g class="room">
             <rect x="534" y="314" width="100" height="80" fill="rgba(96, 165, 250, 0.2)" stroke="rgba(96, 165, 250, 0.5)" stroke-width="1"/>
-            <text x="584" y="360" class="room-size">BATHROOM</text>
+            <text x="584" y="360" class="room-size">FULL BATH</text>
           </g>
 
           <!-- Closet -->
@@ -1091,13 +1147,21 @@
             <text x="690" y="360" class="room-size">CLOSET</text>
           </g>
 
-          <!-- Covered entry -->
+          <!-- Entry -->
           <g class="room">
-            <rect x="254" y="354" width="150" height="117" fill="rgba(244, 114, 182, 0.08)" stroke="rgba(244, 114, 182, 0.3)" stroke-width="1" stroke-dasharray="5,3"/>
-            <text x="329" y="420" class="room-size" fill="rgba(244, 114, 182, 0.6)">COVERED ENTRY</text>
+            <rect x="254" y="354" width="150" height="117" fill="rgba(244, 114, 182, 0.08)" stroke="rgba(244, 114, 182, 0.3)" stroke-width="1"/>
+            <text x="329" y="410" class="room-label" font-size="9" fill="rgba(244, 114, 182, 0.7)">ENTRY</text>
+            <text x="329" y="430" class="room-size" fill="rgba(244, 114, 182, 0.5)">Separate driveway access</text>
+          </g>
+
+          <!-- Storage/Utility -->
+          <g class="room">
+            <rect x="404" y="354" width="130" height="117" fill="rgba(156, 163, 175, 0.1)" stroke="rgba(156, 163, 175, 0.4)" stroke-width="1"/>
+            <text x="469" y="420" class="room-size">STORAGE</text>
           </g>
 
           <text x="500" y="120" fill="rgba(244, 114, 182, 0.8)" font-size="14" text-anchor="middle" font-weight="600">GUEST HOUSE — 800 SQ FT</text>
+          <text x="500" y="140" fill="rgba(244, 114, 182, 0.5)" font-size="10" text-anchor="middle">Secluded behind main house • Separate entrance</text>
         </svg>
       </div>
 
@@ -1105,8 +1169,12 @@
         <h3>Room Breakdown — Guest House (800 sq ft)</h3>
         <div class="room-grid">
           <div class="room-card">
-            <div class="room-card-name">Living/Kitchen</div>
+            <div class="room-card-name">Living Area</div>
             <div class="room-card-size">20' × 14' — 280 sq ft open plan</div>
+          </div>
+          <div class="room-card">
+            <div class="room-card-name">Kitchenette</div>
+            <div class="room-card-size">Mini fridge, microwave, sink</div>
           </div>
           <div class="room-card">
             <div class="room-card-name">Bedroom</div>
@@ -1116,74 +1184,89 @@
             <div class="room-card-name">Full Bathroom</div>
             <div class="room-card-size">10' × 8' — 80 sq ft</div>
           </div>
-          <div class="room-card">
-            <div class="room-card-name">Walk-in Closet</div>
-            <div class="room-card-size">8' × 8' — 64 sq ft</div>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- Office/Gym Floor Plan -->
-    <div class="floor-plan-view" data-floor="office">
+    <!-- Gym Building Floor Plan -->
+    <div class="floor-plan-view" data-floor="gym">
       <div class="floor-svg-container">
         <svg viewBox="0 0 1000 625" preserveAspectRatio="xMidYMid meet">
-          <rect x="300" y="175" width="400" height="275" fill="none" stroke="#3a3a3a" stroke-width="4"/>
+          <rect x="250" y="150" width="500" height="325" fill="none" stroke="#3a3a3a" stroke-width="4"/>
           
-          <!-- Office -->
+          <!-- Main Gym Area -->
           <g class="room">
-            <rect x="304" y="179" width="200" height="180" fill="rgba(167, 139, 250, 0.15)" stroke="rgba(167, 139, 250, 0.5)" stroke-width="1"/>
-            <text x="404" y="265" class="room-label">PRIVATE OFFICE</text>
-            <text x="404" y="285" class="room-size">15' × 14' (210 sq ft)</text>
+            <rect x="254" y="154" width="350" height="240" fill="rgba(167, 139, 250, 0.15)" stroke="rgba(167, 139, 250, 0.5)" stroke-width="1"/>
+            <text x="429" y="260" class="room-label" font-size="13">GYM FLOOR</text>
+            <text x="429" y="285" class="room-size">Cardio • Weights • Stretching</text>
+            <text x="429" y="305" class="room-size">25' × 18' (450 sq ft)</text>
+            
+            <!-- Equipment zones indicated -->
+            <rect x="274" y="174" width="80" height="60" fill="rgba(167, 139, 250, 0.1)" stroke="rgba(167, 139, 250, 0.3)" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="314" y="210" class="room-size" font-size="7">CARDIO</text>
+            
+            <rect x="374" y="174" width="100" height="80" fill="rgba(167, 139, 250, 0.1)" stroke="rgba(167, 139, 250, 0.3)" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="424" y="220" class="room-size" font-size="7">FREE WEIGHTS</text>
+            
+            <rect x="494" y="174" width="90" height="60" fill="rgba(167, 139, 250, 0.1)" stroke="rgba(167, 139, 250, 0.3)" stroke-width="1" stroke-dasharray="3,2"/>
+            <text x="539" y="210" class="room-size" font-size="7">MACHINES</text>
           </g>
 
-          <!-- Gym -->
+          <!-- Sauna -->
           <g class="room">
-            <rect x="504" y="179" width="192" height="180" fill="rgba(167, 139, 250, 0.2)" stroke="rgba(167, 139, 250, 0.6)" stroke-width="1"/>
-            <text x="600" y="265" class="room-label">GYM / FLEX</text>
-            <text x="600" y="285" class="room-size">14' × 14' (196 sq ft)</text>
+            <rect x="604" y="154" width="142" height="120" fill="rgba(251, 146, 60, 0.2)" stroke="rgba(251, 146, 60, 0.5)" stroke-width="2"/>
+            <text x="675" y="210" class="room-label" fill="rgba(251, 146, 60, 0.9)">SAUNA</text>
+            <text x="675" y="230" class="room-size">10' × 8' (80 sq ft)</text>
           </g>
 
-          <!-- Half Bath -->
+          <!-- Storage Room -->
           <g class="room">
-            <rect x="304" y="359" width="100" height="87" fill="rgba(96, 165, 250, 0.2)" stroke="rgba(96, 165, 250, 0.5)" stroke-width="1"/>
-            <text x="354" y="410" class="room-size">HALF BATH</text>
+            <rect x="604" y="274" width="142" height="120" fill="rgba(156, 163, 175, 0.15)" stroke="rgba(156, 163, 175, 0.5)" stroke-width="1"/>
+            <text x="675" y="330" class="room-label">STORAGE</text>
+            <text x="675" y="350" class="room-size">Equipment & supplies</text>
           </g>
 
-          <!-- Storage -->
+          <!-- Entry -->
           <g class="room">
-            <rect x="404" y="359" width="140" height="87" fill="rgba(156, 163, 175, 0.15)" stroke="rgba(156, 163, 175, 0.5)" stroke-width="1"/>
-            <text x="474" y="410" class="room-size">STORAGE</text>
+            <rect x="254" y="394" width="200" height="77" fill="rgba(167, 139, 250, 0.08)" stroke="rgba(167, 139, 250, 0.3)" stroke-width="1"/>
+            <text x="354" y="438" class="room-label" font-size="9" fill="rgba(167, 139, 250, 0.7)">ENTRY / VESTIBULE</text>
           </g>
 
-          <!-- Covered walkway -->
+          <!-- Changing area -->
           <g class="room">
-            <rect x="544" y="359" width="152" height="87" fill="rgba(167, 139, 250, 0.08)" stroke="rgba(167, 139, 250, 0.3)" stroke-width="1" stroke-dasharray="5,3"/>
-            <text x="620" y="410" class="room-size" fill="rgba(167, 139, 250, 0.6)">ENTRY</text>
+            <rect x="454" y="394" width="150" height="77" fill="rgba(167, 139, 250, 0.1)" stroke="rgba(167, 139, 250, 0.4)" stroke-width="1"/>
+            <text x="529" y="438" class="room-size">CHANGING AREA</text>
           </g>
 
-          <text x="500" y="145" fill="rgba(167, 139, 250, 0.8)" font-size="14" text-anchor="middle" font-weight="600">OFFICE / GYM BUILDING — 600 SQ FT</text>
+          <!-- Half bath indication -->
+          <g class="room">
+            <rect x="604" y="394" width="142" height="77" fill="rgba(96, 165, 250, 0.15)" stroke="rgba(96, 165, 250, 0.4)" stroke-width="1"/>
+            <text x="675" y="438" class="room-size">HALF BATH</text>
+          </g>
+
+          <text x="500" y="120" fill="rgba(167, 139, 250, 0.8)" font-size="14" text-anchor="middle" font-weight="600">DEDICATED GYM — 600 SQ FT</text>
+          <text x="500" y="140" fill="rgba(167, 139, 250, 0.5)" font-size="10" text-anchor="middle">Behind main house • Quick access from patio</text>
         </svg>
       </div>
 
       <div class="floor-details">
-        <h3>Room Breakdown — Office/Gym (600 sq ft)</h3>
+        <h3>Room Breakdown — Gym Building (600 sq ft)</h3>
         <div class="room-grid">
           <div class="room-card">
-            <div class="room-card-name">Private Office</div>
-            <div class="room-card-size">15' × 14' — 210 sq ft</div>
+            <div class="room-card-name">Gym Floor</div>
+            <div class="room-card-size">25' × 18' — 450 sq ft (cardio, weights, stretching zones)</div>
           </div>
           <div class="room-card">
-            <div class="room-card-name">Gym / Flex Space</div>
-            <div class="room-card-size">14' × 14' — 196 sq ft</div>
-          </div>
-          <div class="room-card">
-            <div class="room-card-name">Half Bathroom</div>
-            <div class="room-card-size">5' × 8' — 40 sq ft</div>
-          </div>
-          <div class="room-card">
-            <div class="room-card-name">Storage</div>
+            <div class="room-card-name">Sauna</div>
             <div class="room-card-size">10' × 8' — 80 sq ft</div>
+          </div>
+          <div class="room-card">
+            <div class="room-card-name">Storage Room</div>
+            <div class="room-card-size">Equipment, supplies, seasonal gear</div>
+          </div>
+          <div class="room-card">
+            <div class="room-card-name">Half Bath + Changing</div>
+            <div class="room-card-size">Convenience without going to main house</div>
           </div>
         </div>
       </div>
@@ -1214,26 +1297,28 @@
             <!-- Ground -->
             <rect x="0" y="180" width="400" height="70" fill="#1a1a1a"/>
             
-            <!-- House silhouette - modern single story -->
-            <rect x="50" y="120" width="300" height="60" fill="#2a2a2a"/>
-            <rect x="40" y="110" width="320" height="15" fill="#3a3a3a"/> <!-- Flat roof overhang -->
+            <!-- House silhouette - butterfly wings -->
+            <rect x="30" y="130" width="100" height="50" fill="#2a2a2a"/>
+            <rect x="270" y="130" width="100" height="50" fill="#2a2a2a"/>
+            <rect x="100" y="110" width="200" height="70" fill="#2a2a2a"/>
+            <rect x="20" y="120" width="360" height="12" fill="#3a3a3a"/>
             
             <!-- Large windows with warm glow -->
-            <rect x="70" y="130" width="80" height="40" fill="rgba(201, 169, 98, 0.3)"/>
-            <rect x="170" y="130" width="60" height="40" fill="rgba(201, 169, 98, 0.3)"/>
-            <rect x="250" y="130" width="80" height="40" fill="rgba(201, 169, 98, 0.3)"/>
+            <rect x="50" y="140" width="60" height="35" fill="rgba(201, 169, 98, 0.3)"/>
+            <rect x="140" y="125" width="50" height="45" fill="rgba(201, 169, 98, 0.3)"/>
+            <rect x="210" y="125" width="50" height="45" fill="rgba(201, 169, 98, 0.3)"/>
+            <rect x="290" y="140" width="60" height="35" fill="rgba(201, 169, 98, 0.3)"/>
+            
+            <!-- Breezeway to garage -->
+            <rect x="370" y="145" width="30" height="35" fill="#252525"/>
             
             <!-- Accent lighting -->
-            <rect x="50" y="175" width="300" height="3" fill="rgba(201, 169, 98, 0.5)"/>
-            
-            <!-- Landscaping -->
-            <ellipse cx="30" cy="175" rx="25" ry="15" fill="#1f2f1f"/>
-            <ellipse cx="380" cy="175" rx="20" ry="12" fill="#1f2f1f"/>
+            <rect x="30" y="175" width="340" height="3" fill="rgba(201, 169, 98, 0.5)"/>
           </svg>
         </div>
         <div class="design-card-content">
-          <h4>Exterior: Warm Minimalism</h4>
-          <p>Flat roof with deep overhangs, stucco and wood accents, floor-to-ceiling glass walls that blur indoor/outdoor lines</p>
+          <h4>Exterior: Butterfly Silhouette</h4>
+          <p>Wings extend from center, flat roof with deep overhangs, stucco and wood accents, floor-to-ceiling glass</p>
         </div>
       </div>
 
@@ -1269,7 +1354,7 @@
         </div>
         <div class="design-card-content">
           <h4>Kitchen: Chef's Paradise</h4>
-          <p>10' waterfall island, 48" pro range, custom walnut cabinetry, quartzite counters, butler's pantry</p>
+          <p>9' waterfall island, 48" pro range, custom walnut cabinetry, quartzite counters</p>
         </div>
       </div>
 
@@ -1284,7 +1369,7 @@
             <!-- Floor -->
             <rect x="0" y="200" width="400" height="50" fill="#2a2519"/>
             
-            <!-- Large sliding doors to patio -->
+            <!-- L-shaped patio doors -->
             <rect x="200" y="60" width="180" height="140" fill="#0f1419"/>
             <line x1="290" y1="60" x2="290" y2="200" stroke="#2a2a2a" stroke-width="3"/>
             
@@ -1301,8 +1386,8 @@
           </svg>
         </div>
         <div class="design-card-content">
-          <h4>Great Room: Gathering Space</h4>
-          <p>20' ceilings, linear fireplace, multi-panel sliding glass walls, polished concrete or wide-plank oak floors</p>
+          <h4>Great Room: Indoor-Outdoor Flow</h4>
+          <p>20' ceilings, linear fireplace, multi-panel sliders to L-wrap patio</p>
         </div>
       </div>
 
@@ -1336,7 +1421,7 @@
         </div>
         <div class="design-card-content">
           <h4>Primary Bath: Spa Retreat</h4>
-          <p>Freestanding soaking tub, curbless shower with rain head, heated floors, floating double vanity</p>
+          <p>Freestanding soaking tub, curbless shower with rain head, heated floors</p>
         </div>
       </div>
     </div>
@@ -1402,23 +1487,22 @@
       <div class="cost-card">
         <div class="cost-card-header">
           <div>
-            <div class="cost-card-title">Office/Gym</div>
+            <div class="cost-card-title">Gym Building</div>
           </div>
           <div class="cost-card-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              <path d="M6 4v16M18 4v16M6 12h12M3 8h3M3 16h3M18 8h3M18 16h3"/>
             </svg>
           </div>
         </div>
-        <div class="cost-card-value" data-cost="office">$150,000</div>
-        <div class="cost-card-range">600 sq ft × $250/sq ft</div>
+        <div class="cost-card-value" data-cost="gym">$180,000</div>
+        <div class="cost-card-range">600 sq ft × $300/sq ft (incl. sauna)</div>
       </div>
 
       <div class="cost-card">
         <div class="cost-card-header">
           <div>
-            <div class="cost-card-title">3-Car Garage</div>
+            <div class="cost-card-title">3-Car Garage + Breezeway</div>
           </div>
           <div class="cost-card-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1427,8 +1511,8 @@
             </svg>
           </div>
         </div>
-        <div class="cost-card-value" data-cost="garage">$90,000</div>
-        <div class="cost-card-range">900 sq ft × $100/sq ft</div>
+        <div class="cost-card-value" data-cost="garage">$110,000</div>
+        <div class="cost-card-range">900 sq ft + breezeway @ $120/sq ft</div>
       </div>
     </div>
 
@@ -1448,15 +1532,15 @@
         <div class="cost-row">
           <div>
             <div class="cost-item-name">Site Preparation</div>
-            <div class="cost-item-desc">Clearing, grading, utilities, driveway</div>
+            <div class="cost-item-desc">Clearing, grading, utilities, dual driveways</div>
           </div>
           <div class="cost-item-sqft">—</div>
-          <div class="cost-item-amount">$75,000 - $150,000</div>
+          <div class="cost-item-amount">$85,000 - $160,000</div>
         </div>
         <div class="cost-row">
           <div>
             <div class="cost-item-name">Main House Construction</div>
-            <div class="cost-item-desc">4,200 sq ft single-story modern</div>
+            <div class="cost-item-desc">4,200 sq ft butterfly layout + L-wrap patio</div>
           </div>
           <div class="cost-item-sqft">$275/sq ft</div>
           <div class="cost-item-amount">$1,155,000</div>
@@ -1464,26 +1548,26 @@
         <div class="cost-row">
           <div>
             <div class="cost-item-name">Guest House</div>
-            <div class="cost-item-desc">800 sq ft detached ADU</div>
+            <div class="cost-item-desc">800 sq ft detached, kitchenette, separate entry</div>
           </div>
           <div class="cost-item-sqft">$250/sq ft</div>
           <div class="cost-item-amount">$200,000</div>
         </div>
         <div class="cost-row">
           <div>
-            <div class="cost-item-name">Office/Gym Building</div>
-            <div class="cost-item-desc">600 sq ft detached workspace</div>
+            <div class="cost-item-name">Dedicated Gym Building</div>
+            <div class="cost-item-desc">600 sq ft with sauna, storage, half bath</div>
           </div>
-          <div class="cost-item-sqft">$250/sq ft</div>
-          <div class="cost-item-amount">$150,000</div>
+          <div class="cost-item-sqft">$300/sq ft</div>
+          <div class="cost-item-amount">$180,000</div>
         </div>
         <div class="cost-row">
           <div>
-            <div class="cost-item-name">3-Car Garage</div>
-            <div class="cost-item-desc">Attached or detached, 900 sq ft</div>
+            <div class="cost-item-name">3-Car Garage + Breezeway</div>
+            <div class="cost-item-desc">Detached, covered connection to main house</div>
           </div>
-          <div class="cost-item-sqft">$100/sq ft</div>
-          <div class="cost-item-amount">$90,000</div>
+          <div class="cost-item-sqft">$120/sq ft</div>
+          <div class="cost-item-amount">$110,000</div>
         </div>
         <div class="cost-row">
           <div>
@@ -1491,23 +1575,23 @@
             <div class="cost-item-desc">Lawn, trees, privacy fencing, fire pit, pathways</div>
           </div>
           <div class="cost-item-sqft">—</div>
-          <div class="cost-item-amount">$75,000 - $150,000</div>
+          <div class="cost-item-amount">$80,000 - $150,000</div>
         </div>
         <div class="cost-row">
           <div>
             <div class="cost-item-name">Gated Entry & Security</div>
-            <div class="cost-item-desc">Automated gate, cameras, smart locks</div>
+            <div class="cost-item-desc">Dual automated gates, cameras, smart locks</div>
           </div>
           <div class="cost-item-sqft">—</div>
-          <div class="cost-item-amount">$25,000 - $50,000</div>
+          <div class="cost-item-amount">$35,000 - $60,000</div>
         </div>
         <div class="cost-row">
           <div>
             <div class="cost-item-name">Architecture & Engineering</div>
-            <div class="cost-item-desc">8-12% of construction cost</div>
+            <div class="cost-item-desc">10-12% of construction cost</div>
           </div>
           <div class="cost-item-sqft">~10%</div>
-          <div class="cost-item-amount">$160,000</div>
+          <div class="cost-item-amount">$165,000</div>
         </div>
         <div class="cost-row">
           <div>
@@ -1515,15 +1599,15 @@
             <div class="cost-item-desc">Varies by county</div>
           </div>
           <div class="cost-item-sqft">—</div>
-          <div class="cost-item-amount">$15,000 - $40,000</div>
+          <div class="cost-item-amount">$20,000 - $50,000</div>
         </div>
         <div class="cost-row">
           <div>
             <div class="cost-item-name">Contingency</div>
-            <div class="cost-item-desc">10-15% buffer for surprises</div>
+            <div class="cost-item-desc">12-15% buffer for surprises</div>
           </div>
           <div class="cost-item-sqft">~12%</div>
-          <div class="cost-item-amount">$200,000</div>
+          <div class="cost-item-amount">$220,000</div>
         </div>
         <div class="cost-row total">
           <div>
@@ -1531,7 +1615,7 @@
             <div class="cost-item-desc">Custom finish level, 2-3 acre lot</div>
           </div>
           <div class="cost-item-sqft">6,500 total sq ft</div>
-          <div class="cost-item-amount">$2.3M - $2.8M</div>
+          <div class="cost-item-amount">$2.4M - $2.9M</div>
         </div>
       </div>
     </div>
@@ -1553,23 +1637,23 @@
       </div>
       <div class="timeline-item">
         <h4>Phase 2: Land Acquisition</h4>
-        <p>Find and purchase land, conduct soil tests and surveys, understand zoning restrictions</p>
+        <p>Find and purchase 2-3 acre lot, conduct soil tests and surveys, understand zoning for multiple structures</p>
         <div class="timeline-duration">Year 1-2</div>
       </div>
       <div class="timeline-item">
         <h4>Phase 3: Design Development</h4>
-        <p>Work with architect on detailed plans, select major finishes, complete construction documents</p>
+        <p>Work with architect on detailed plans for all 4 structures, select major finishes, complete construction documents</p>
         <div class="timeline-duration">6-9 months</div>
       </div>
       <div class="timeline-item">
         <h4>Phase 4: Permitting</h4>
-        <p>Submit plans, navigate approvals, finalize contractor selection</p>
+        <p>Submit plans for main house + outbuildings, navigate approvals, finalize contractor selection</p>
         <div class="timeline-duration">2-4 months</div>
       </div>
       <div class="timeline-item">
         <h4>Phase 5: Construction</h4>
-        <p>Site prep → Foundation → Framing → MEP rough-in → Exterior → Interior finishes → Final details</p>
-        <div class="timeline-duration">14-20 months</div>
+        <p>Site prep → Foundation → Framing → MEP rough-in → Exterior → Interior finishes → Outbuildings</p>
+        <div class="timeline-duration">16-22 months</div>
       </div>
       <div class="timeline-item">
         <h4>Phase 6: Move-In</h4>
@@ -1583,8 +1667,8 @@
   <footer>
     <div class="footer-content">
       <div class="footer-title">Ready to Build Your Dream?</div>
-      <p class="footer-text">This vision document is a starting point. The next steps are finding the right land and assembling your team: architect, builder, and interior designer who understand modern residential design.</p>
-      <p class="footer-note">Estimates based on 2025 Southeast US construction costs. Actual costs vary by location, market conditions, and specific design choices.</p>
+      <p class="footer-text">This vision document is your starting point. The next steps are finding the right land and assembling your team: architect, builder, and interior designer who understand modern residential design.</p>
+      <p class="footer-note">Estimates based on 2025 Southeast US construction costs (VA/GA/TN region). Actual costs vary by location, market conditions, and specific design choices. Version 2.0</p>
     </div>
   </footer>
 
@@ -1602,9 +1686,9 @@
 
     // Finish level selector
     const finishCosts = {
-      standard: { main: 840000, guest: 160000, office: 120000, garage: 72000, rate: 200 },
-      custom: { main: 1155000, guest: 200000, office: 150000, garage: 90000, rate: 275 },
-      luxury: { main: 1680000, guest: 320000, office: 240000, garage: 135000, rate: 400 }
+      standard: { main: 840000, guest: 160000, gym: 120000, garage: 85000, rate: 200 },
+      custom: { main: 1155000, guest: 200000, gym: 180000, garage: 110000, rate: 275 },
+      luxury: { main: 1680000, guest: 320000, gym: 270000, garage: 160000, rate: 400 }
     };
 
     document.querySelectorAll('.finish-option').forEach(option => {
@@ -1617,7 +1701,7 @@
         
         document.querySelector('[data-cost="main"]').textContent = '$' + costs.main.toLocaleString();
         document.querySelector('[data-cost="guest"]').textContent = '$' + costs.guest.toLocaleString();
-        document.querySelector('[data-cost="office"]').textContent = '$' + costs.office.toLocaleString();
+        document.querySelector('[data-cost="gym"]').textContent = '$' + costs.gym.toLocaleString();
         document.querySelector('[data-cost="garage"]').textContent = '$' + costs.garage.toLocaleString();
       });
     });
