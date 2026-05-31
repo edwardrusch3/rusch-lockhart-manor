@@ -1,0 +1,40 @@
+{
+  "planPath": "docs/superpowers/plans/2026-05-30-3d-compound-visualization.md",
+  "tasks": [
+    {
+      "id": 1,
+      "subject": "Create config.js — all building dimensions and site layout",
+      "status": "pending",
+      "description": "**Goal:** Create the single source of truth for all compound dimensions, colors, camera, and lighting.\n\n**Files:**\n- Create: `config.js`\n\n**Acceptance Criteria:**\n- [ ] All six structures defined\n- [ ] Ends with `export { CONFIG };`\n- [ ] Every numeric value has a `// ft` comment\n\n**Verify:** Browser console → `CONFIG.mainHouse.width` → `70`\n\n```json:metadata\n{\"files\": [\"config.js\"], \"verifyCommand\": \"console: CONFIG.mainHouse.width\", \"acceptanceCriteria\": [\"All structures defined\", \"Named export\", \"ft comments\"]}\n```"
+    },
+    {
+      "id": 2,
+      "subject": "Create buildings.js — geometry generators from config",
+      "status": "pending",
+      "blockedBy": [1],
+      "description": "**Goal:** Pure functions that return THREE.Group meshes for every structure.\n\n**Files:**\n- Create: `buildings.js`\n\n**Acceptance Criteria:**\n- [ ] createMainHouse — clerestory geometry\n- [ ] createGableBuilding — reusable for 4 outbuildings\n- [ ] createGround, createPatio\n- [ ] No scene.add() inside functions\n\n**Verify:** All buildings visible in scene.html\n\n```json:metadata\n{\"files\": [\"buildings.js\"], \"verifyCommand\": \"http://localhost:8080/scene.html — all buildings visible\", \"acceptanceCriteria\": [\"createMainHouse clerestory\", \"createGableBuilding reusable\", \"Pure functions\"]}\n```"
+    },
+    {
+      "id": 3,
+      "subject": "Create controls.js — live panel + orbit/walkthrough camera switcher",
+      "status": "pending",
+      "blockedBy": [1, 2],
+      "description": "**Goal:** Floating HTML slider panel + camera mode switching.\n\n**Files:**\n- Create: `controls.js`\n\n**Acceptance Criteria:**\n- [ ] Panel updates CONFIG and calls onRebuild\n- [ ] F → walkthrough, Escape → orbit\n- [ ] HUD badge shows mode\n\n**Verify:** Slider updates geometry; F/Escape switches camera modes\n\n```json:metadata\n{\"files\": [\"controls.js\"], \"verifyCommand\": \"Drag slider → rebuild; F → walk; Escape → orbit\", \"acceptanceCriteria\": [\"Live panel\", \"Camera switching\", \"HUD badge\"]}\n```"
+    },
+    {
+      "id": 4,
+      "subject": "Create main.js — scene setup, lighting, render loop",
+      "status": "pending",
+      "blockedBy": [2, 3],
+      "description": "**Goal:** Wire all modules into a running Three.js scene.\n\n**Files:**\n- Create: `main.js`\n\n**Acceptance Criteria:**\n- [ ] All six structures in scene\n- [ ] rebuildBuilding(name) works\n- [ ] Resize handler correct\n\n**Verify:** All buildings visible, shadows, resize\n\n```json:metadata\n{\"files\": [\"main.js\"], \"verifyCommand\": \"http://localhost:8080/scene.html — buildings, shadows, resize\", \"acceptanceCriteria\": [\"All structures\", \"rebuildBuilding\", \"Resize\"]}\n```"
+    },
+    {
+      "id": 5,
+      "subject": "Create scene.html — entry point, add 3D View link to index.html",
+      "status": "pending",
+      "blockedBy": [4],
+      "description": "**Goal:** Standalone entry point + nav link.\n\n**Files:**\n- Create: `scene.html`\n- Modify: `index.html`\n\n**Acceptance Criteria:**\n- [ ] scene.html loads cleanly\n- [ ] No console errors\n- [ ] index.html nav link present\n- [ ] Pushed to GitHub\n\n**Verify:** http://localhost:8080/scene.html works; nav link present\n\n```json:metadata\n{\"files\": [\"scene.html\", \"index.html\"], \"verifyCommand\": \"http://localhost:8080/scene.html and index.html nav\", \"acceptanceCriteria\": [\"Loads cleanly\", \"No errors\", \"Nav link\", \"Pushed\"]}\n```"
+    }
+  ],
+  "lastUpdated": "2026-05-30"
+}
