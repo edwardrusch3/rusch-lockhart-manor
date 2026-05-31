@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rusch-Lockhart Manor — 3D View</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Three.js r169 via importmap — no build step needed -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three":          "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/":  "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg:     #0a0a0a;
+      --accent: #c9a962;
+      --border: #2a2a2a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      overflow: hidden;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+
+    /* Back nav link */
+    #back-link {
+      position: fixed; top: 1rem; left: 1rem; z-index: 200;
+      color: var(--accent); text-decoration: none;
+      font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+      opacity: 0.7; transition: opacity 0.2s;
+    }
+    #back-link:hover { opacity: 1; }
+
+    /* Canvas container — Three.js appends canvas here */
+    #canvas {
+      position: fixed; inset: 0;
+    }
+
+    /* Keyboard hint — bottom center */
+    #hint {
+      position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%);
+      font-size: 0.7rem; letter-spacing: 0.06em; color: #444;
+      pointer-events: none; white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" id="back-link">← Planning Site</a>
+  <div id="canvas"></div>
+  <div id="hint">Drag to orbit · Scroll to zoom · F = walk · Esc = orbit</div>
+
+  <!-- Load scene as ES module (importmap must be parsed first) -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>

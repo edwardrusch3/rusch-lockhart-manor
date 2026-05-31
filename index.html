@@ -746,6 +746,7 @@
       <a href="#design" class="nav-link">Design Direction</a>
       <a href="#cost" class="nav-link">Cost Breakdown</a>
       <a href="#timeline" class="nav-link">Timeline</a>
+      <a href="scene.html" class="nav-link" style="color: var(--accent); border-bottom-color: var(--accent);">3D View →</a>
     </div>
   </nav>
 
@@ -1811,12 +1812,14 @@
       });
     });
 
-    // Smooth scroll for nav links
+    // Smooth scroll for nav links (skip external links like scene.html)
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('#')) return;
         e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
       });
     });
 
