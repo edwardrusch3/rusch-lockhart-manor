@@ -57,24 +57,42 @@ const PANEL_CSS = `
   }
   #crosshair::before { width: 1px; height: 16px; top: -8px; left: 0; }
   #crosshair::after  { width: 16px; height: 1px; top: 0; left: -8px; }
+  #ctrl-panel .sqft-bar {
+    padding: 0.45rem 0.75rem;
+    background: rgba(201,169,98,0.07);
+    border-bottom: 1px solid #2a2a2a;
+    display: grid; grid-template-columns: 1fr auto; gap: 0.2rem 0.5rem;
+  }
+  #ctrl-panel .sqft-lbl { font-size: 10px; color: #888; }
+  #ctrl-panel .sqft-val { font-size: 10px; color: #c9a962; text-align: right; font-family: monospace; }
+  #ctrl-panel .sqft-total-lbl {
+    font-size: 10px; color: #a0a0a0; font-weight: 600;
+    border-top: 1px solid #2a2a2a; padding-top: 0.2rem;
+  }
+  #ctrl-panel .sqft-total-val {
+    font-size: 10px; color: #fff; text-align: right; font-family: monospace;
+    font-weight: 600; border-top: 1px solid #2a2a2a; padding-top: 0.2rem;
+  }
+  #ctrl-panel .tab-row { display: flex; border-bottom: 1px solid #2a2a2a; }
+  #ctrl-panel .tab {
+    flex: 1; padding: 0.35rem 0; text-align: center;
+    font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    background: none; border: none; color: #666; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  }
+  #ctrl-panel .tab.active { color: #c9a962; border-bottom-color: #c9a962; }
+  #tab-position .val { color: #7aa3c9; }
 `;
 
 // ── Panel builder ─────────────────────────────────────────────────────────────
 
-/**
- * buildPanel(CONFIG, onRebuild)
- * Injects the CSS + HTML panel into the document.
- * Returns a function updatePanel() for future use (reserved).
- */
 function buildPanel(CONFIG, onRebuild) {
-  // Inject CSS
   const style = document.createElement('style');
   style.textContent = PANEL_CSS;
   document.head.appendChild(style);
 
-  // Building sections definition
-  // Each entry: { key: CONFIG key, label, sliders: [{prop, label, min, max, step}] }
-  const sections = [
+  // ── SIZE sections ───────────────────────────────────────────────────────────
+  const sizeSections = [
     {
       key: 'mainHouse', label: 'Main House', sliders: [
         { prop: 'width',            label: 'Width',       min: 40,  max: 100, step: 1 },
@@ -110,9 +128,79 @@ function buildPanel(CONFIG, onRebuild) {
     },
   ];
 
-  // Build HTML
+  // ── POSITION sections (outbuildings only — main house is fixed anchor) ──────
+  const positionSections = [
+    { key: 'guestHouse', label: 'Guest House' },
+    { key: 'gym',        label: 'Gym'         },
+    { key: 'garage',     label: 'Garage'      },
+  ];
+
+  function renderSizeSection(sec) {
+    return `
+      <div class="building-section">
+        <div class="section-header" data-key="${sec.key}">
+          ${sec.label} <span>▸</span>
+        </div>
+        <div class="section-body" id="body-${sec.key}">
+          ${sec.sliders.map(s => `
+            <div class="row">
+              <label>${s.label}</label>
+              <input type="range"
+                data-key="${sec.key}" data-prop="${s.prop}"
+                min="${s.min}" max="${s.max}" step="${s.step}"
+                value="${CONFIG[sec.key][s.prop]}">
+              <span class="val" id="val-${sec.key}-${s.prop}">${CONFIG[sec.key][s.prop]}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }
+
+  function renderPositionSection(sec) {
+    const pos = CONFIG[sec.key].position;
+    return `
+      <div class="building-section">
+        <div class="section-header" data-key="pos-${sec.key}">
+          ${sec.label} <span>▸</span>
+        </div>
+        <div class="section-body" id="body-pos-${sec.key}">
+          <div class="row">
+            <label>East/West</label>
+            <input type="range"
+              data-key="${sec.key}" data-prop="position" data-subprop="x"
+              min="-120" max="120" step="1" value="${pos.x}">
+            <span class="val" id="val-${sec.key}-position-x">${pos.x}</span>
+          </div>
+          <div class="row">
+            <label>N/S</label>
+            <input type="range"
+              data-key="${sec.key}" data-prop="position" data-subprop="z"
+              min="-120" max="120" step="1" value="${pos.z}">
+            <span class="val" id="val-${sec.key}-position-z">${pos.z}</span>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ── Sq ft helpers ───────────────────────────────────────────────────────────
+  const sqftKeys   = ['mainHouse', 'guestHouse', 'gym', 'garage'];
+  const sqftLabels = { mainHouse: 'Main House', guestHouse: 'Guest House', gym: 'Gym', garage: 'Garage' };
+
+  function updateSqft() {
+    let total = 0;
+    sqftKeys.forEach(k => {
+      const sf = Math.round(CONFIG[k].width * CONFIG[k].depth);
+      total += sf;
+      document.getElementById(`sqft-${k}`).textContent = sf.toLocaleString();
+    });
+    document.getElementById('sqft-total').textContent = total.toLocaleString();
+  }
+
+  const initialTotal = sqftKeys.reduce((s, k) => s + CONFIG[k].width * CONFIG[k].depth, 0);
+
+  // ── Build panel HTML ────────────────────────────────────────────────────────
   const panel = document.createElement('div');
-  panel.id    = 'ctrl-panel';
+  panel.id = 'ctrl-panel';
 
   panel.innerHTML = `
     <header>
@@ -120,25 +208,24 @@ function buildPanel(CONFIG, onRebuild) {
       <button class="collapse-btn" id="ctrl-toggle">−</button>
     </header>
     <div id="ctrl-body">
-      ${sections.map(sec => `
-        <div class="building-section">
-          <div class="section-header" data-key="${sec.key}">
-            ${sec.label} <span>▸</span>
-          </div>
-          <div class="section-body" id="body-${sec.key}">
-            ${sec.sliders.map(s => `
-              <div class="row">
-                <label>${s.label}</label>
-                <input type="range"
-                  data-key="${sec.key}" data-prop="${s.prop}"
-                  min="${s.min}" max="${s.max}" step="${s.step}"
-                  value="${CONFIG[sec.key][s.prop]}">
-                <span class="val" id="val-${sec.key}-${s.prop}">${CONFIG[sec.key][s.prop]}</span>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `).join('')}
+      <div id="sqft-bar" class="sqft-bar">
+        ${sqftKeys.map(k => `
+          <span class="sqft-lbl">${sqftLabels[k]}</span>
+          <span class="sqft-val" id="sqft-${k}">${Math.round(CONFIG[k].width * CONFIG[k].depth).toLocaleString()}</span>
+        `).join('')}
+        <span class="sqft-total-lbl">Total</span>
+        <span class="sqft-total-val" id="sqft-total">${Math.round(initialTotal).toLocaleString()}</span>
+      </div>
+      <div id="tab-row" class="tab-row">
+        <button class="tab active" data-tab="size">SIZE</button>
+        <button class="tab" data-tab="position">POSITION</button>
+      </div>
+      <div id="tab-size">
+        ${sizeSections.map(renderSizeSection).join('')}
+      </div>
+      <div id="tab-position" style="display:none">
+        ${positionSections.map(renderPositionSection).join('')}
+      </div>
       <div class="globals">
         <label>
           <input type="checkbox" id="chk-grid" ${CONFIG.site.gridVisible ? 'checked' : ''}> Grid
@@ -172,7 +259,19 @@ function buildPanel(CONFIG, onRebuild) {
     btn.textContent    = collapsed ? '−' : '+';
   });
 
-  // Section expand/collapse
+  // Tab switching
+  document.getElementById('tab-row').querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.getElementById('tab-row').querySelectorAll('.tab')
+        .forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const isSize = tab.dataset.tab === 'size';
+      document.getElementById('tab-size').style.display     = isSize ? '' : 'none';
+      document.getElementById('tab-position').style.display = isSize ? 'none' : '';
+    });
+  });
+
+  // Section expand/collapse (works for both size and position sections)
   panel.querySelectorAll('.section-header').forEach(header => {
     header.addEventListener('click', () => {
       const key  = header.dataset.key;
@@ -182,24 +281,32 @@ function buildPanel(CONFIG, onRebuild) {
     });
   });
 
-  // Slider input
+  // Unified slider handler:
+  //   SIZE sliders:     data-key, data-prop            → CONFIG[key][prop] = val
+  //   POSITION sliders: data-key, data-prop, data-subprop → CONFIG[key][prop][subprop] = val
   panel.querySelectorAll('input[type=range]').forEach(slider => {
     slider.addEventListener('input', () => {
-      const { key, prop } = slider.dataset;
+      const { key, prop, subprop } = slider.dataset;
       const val = parseFloat(slider.value);
-      CONFIG[key][prop] = val;
-      document.getElementById(`val-${key}-${prop}`).textContent = val;
+      if (subprop) {
+        CONFIG[key][prop][subprop] = val;
+        document.getElementById(`val-${key}-${prop}-${subprop}`).textContent = val;
+      } else {
+        CONFIG[key][prop] = val;
+        document.getElementById(`val-${key}-${prop}`).textContent = val;
+      }
       onRebuild(key);
+      updateSqft();
     });
   });
 
-  // Grid toggle — rebuilds ground
+  // Grid toggle
   document.getElementById('chk-grid').addEventListener('change', e => {
     CONFIG.site.gridVisible = e.target.checked;
     onRebuild('ground');
   });
 
-  // Shadow toggle — triggers renderer shadow refresh via rebuild all
+  // Shadow toggle
   document.getElementById('chk-shadow').addEventListener('change', e => {
     CONFIG.lighting.shadowsEnabled = e.target.checked;
     onRebuild('__all__');
@@ -210,6 +317,7 @@ function buildPanel(CONFIG, onRebuild) {
       hud.textContent = mode;
       xhair.style.display = mode === 'WALK' ? 'block' : 'none';
     },
+    updateSqft,
   };
 }
 
@@ -295,5 +403,5 @@ export function initControls(scene, camera, renderer, CONFIG, onRebuild) {
     walk.object.position.y = CONFIG.camera.walkHeight;
   }
 
-  return { update };
+  return { update, updateSqft: panel.updateSqft };
 }
