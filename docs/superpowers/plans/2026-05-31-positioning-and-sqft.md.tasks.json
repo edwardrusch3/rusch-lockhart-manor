@@ -1,0 +1,19 @@
+{
+  "planPath": "docs/superpowers/plans/2026-05-31-positioning-and-sqft.md",
+  "tasks": [
+    {
+      "id": 6,
+      "subject": "Add sq ft bar and SIZE/POSITION tabs to controls.js",
+      "status": "pending",
+      "description": "**Goal:** Rewrite buildPanel to add sq ft summary bar, SIZE/POSITION tabs, and position sliders for outbuildings. Update initControls to expose updateSqft.\n\n**Files:**\n- Modify: `controls.js`\n\n**Acceptance Criteria:**\n- [ ] Sq ft bar pinned below header: width×depth per building + running total\n- [ ] SIZE tab (default) shows existing dimension sliders for all 4 buildings\n- [ ] POSITION tab shows East/West + North/South sliders for guestHouse, gym, garage (±120ft, step 1)\n- [ ] Main house has no position sliders\n- [ ] Dragging any dimension slider updates sq ft bar live\n- [ ] Position slider writes to CONFIG[key].position.x/.z and calls onRebuild(key)\n- [ ] initControls returns { update, updateSqft }\n\n**Verify:** Open http://localhost:8080/scene.html — sq ft bar visible; click POSITION tab → position sliders appear; drag Guest House East/West → building moves; drag Main House Width → sq ft total updates.\n\n```json:metadata\n{\"files\": [\"controls.js\"], \"verifyCommand\": \"http://localhost:8080/scene.html — sq ft bar, tabs, position sliders\", \"acceptanceCriteria\": [\"Sq ft bar visible\", \"SIZE/POSITION tabs\", \"Position sliders ±120ft\", \"Main house fixed\", \"updateSqft in return\"]}\n```"
+    },
+    {
+      "id": 7,
+      "subject": "Add cascade rebuilds to main.js",
+      "status": "pending",
+      "blockedBy": [6],
+      "description": "**Goal:** Add cascade rebuild logic to rebuildBuilding so garage→breezeway and mainHouse→patio+breezeway auto-follow.\n\n**Files:**\n- Modify: `main.js`\n\n**Acceptance Criteria:**\n- [ ] Dragging Garage East/West also repositions breezeway automatically\n- [ ] Changing mainHouse dimensions also rebuilds patio and breezeway\n- [ ] rebuildBuilding('__all__') still works without double-rebuilding\n\n**Verify:** Drag Garage East/West → breezeway follows; drag Main House Width → patio stretches.\n\n```json:metadata\n{\"files\": [\"main.js\"], \"verifyCommand\": \"http://localhost:8080/scene.html — garage move cascades to breezeway\", \"acceptanceCriteria\": [\"garage→breezeway cascade\", \"mainHouse→patio+breezeway cascade\"]}\n```"
+    }
+  ],
+  "lastUpdated": "2026-05-31"
+}
