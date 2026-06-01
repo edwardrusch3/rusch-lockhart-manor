@@ -106,7 +106,7 @@ function rebuildBuilding(name) {
     BUILDING_NAMES.forEach(n => rebuildBuilding(n));
     return;
   }
-  // Remove old group
+  // Remove old group and dispose geometry/materials
   const old = scene.getObjectByName(name);
   if (old) {
     old.traverse(obj => {
@@ -121,6 +121,9 @@ function rebuildBuilding(name) {
   // Add new group
   const next = buildGroup(name);
   if (next) scene.add(next);
+  // Cascade: rebuild structures that depend on this one's position/size
+  if (name === 'garage')    rebuildBuilding('breezeway');
+  if (name === 'mainHouse') { rebuildBuilding('patio'); rebuildBuilding('breezeway'); }
 }
 
 // Build initial scene
